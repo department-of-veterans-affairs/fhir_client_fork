@@ -1,6 +1,8 @@
-# FHIR Client [![Build Status](https://travis-ci.org/fhir-crucible/fhir_client.svg?branch=master)](https://travis-ci.org/fhir-crucible/fhir_client)
+# FHIR Client
 
 Ruby FHIR client.
+
+This repository is a fork of [fhir-crucible/fhir_client](https://github.com/fhir-crucible/fhir_client) that replaces the `rest-client` gem with the `http` gem and uses `oauth2 >= 1.1`. 
 
 Supports:
 * FHIR R4, STU3 and DSTU2
@@ -218,7 +220,9 @@ else
 end
 ```
 
-# License
+# Original License
+
+Original Authors: Andre Quina, Jason Walonoski, Robert Scanlon, and Reece Adamson
 
 Copyright 2014-2022 The MITRE Corporation
 

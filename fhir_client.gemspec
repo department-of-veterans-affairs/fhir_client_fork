@@ -6,13 +6,12 @@ require 'fhir_client/version'
 Gem::Specification.new do |spec|
   spec.name          = 'fhir_client'
   spec.version       = FHIR::Client::VERSION
-  spec.authors       = ['Andre Quina', 'Jason Walonoski', 'Robert Scanlon', 'Reece Adamson']
-  spec.email         = ['jwalonoski@mitre.org']
-  spec.licenses      = ['Apache-2.0']
+  spec.authors       = ['Steven Cumming']
+  spec.licenses      = ['CC0 1.0 Universal']
 
   spec.summary       = %q{A Gem for handling FHIR client requests in ruby}
   spec.description   = %q{A Gem for handling FHIR client requests in ruby}
-  spec.homepage      = 'https://github.com/fhir-crucible/fhir_client'
+  spec.homepage      = 'https://github.com/department-of-veterans-affairs/fhir_client'
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
@@ -27,9 +26,10 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'fhir_stu3_models', '>= 3.1.1'
   spec.add_dependency 'fhir_dstu2_models', '>= 1.1.1'
   spec.add_dependency 'nokogiri', '>= 1.10.4'
-  spec.add_dependency 'oauth2', '~> 1.1'
+  spec.add_dependency 'oauth2', '>= 1.1'
   spec.add_dependency 'rack', '>= 1.5'
   spec.add_dependency 'rest-client', '~> 2.0'
+  spec.add_dependency 'http', '~> 5.1'
   spec.add_dependency 'tilt', '>= 1.1'
 
   spec.add_development_dependency 'bundler', '~> 2.0'
