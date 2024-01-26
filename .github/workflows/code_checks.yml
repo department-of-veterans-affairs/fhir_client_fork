@@ -4,6 +4,7 @@ on: [push]
 
 jobs:
   linting_and_security:
+    name: Linting and Security
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -24,6 +25,7 @@ jobs:
         run: bundle exec rubocop --parallel --format github
 
   specs:
+    name: Tests
     runs-on: ubuntu-latest
     strategy:
       matrix:
