@@ -6,6 +6,7 @@ require 'fhir_client/version'
 Gem::Specification.new do |spec|
   spec.name          = 'fhir_client'
   spec.version       = FHIR::Client::VERSION
+  spec.required_ruby_version = '>= 3.2.2'
   spec.authors       = ['Andre Quina', 'Jason Walonoski', 'Robert Scanlon', 'Reece Adamson']
   spec.email         = ['jwalonoski@mitre.org']
   spec.licenses      = ['Apache-2.0']

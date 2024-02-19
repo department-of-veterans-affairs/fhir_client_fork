@@ -1,3 +1,9 @@
+# THIS IS A FORK OF fhir_client v3.0
+
+Department of Veterans Affairs / Vets API forked [fhir_client](https://github.com/fhir-crucible/fhir_client) due to the internal need of updating Oauth2 gem and replacing the `rest-client` gem with `http`.
+
+The original README is below:
+
 # FHIR Client
 
 Ruby FHIR client.
