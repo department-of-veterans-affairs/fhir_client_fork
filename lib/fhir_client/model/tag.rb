@@ -29,15 +29,15 @@ module FHIR
     # Parses a string named "header" and returns a Tag object.
     def self.parse_tag(header)
       h = FHIR::Tag.new
-      regex = /\s*;\s*/
+      regex = /;\s*/
       tokens = header.strip.split(regex)
       h.term = tokens.shift
       tokens.each do |token|
         if !token.strip.index('scheme').nil?
-          token.strip =~ %r{(?<=scheme)(\s*)=(\s*)([\".:_\-\/\w]+)}
+          token.strip =~ %r{scheme\s*=\s*([\".:_\-\/\w]+)}
           h.scheme = Regexp.last_match(3)
         elsif !token.strip.index('label').nil?
-          token.strip =~ %r{(?<=label)(\s*)=(\s*)([\".:_\-\/\w\s]+)}
+          token.strip =~ %r{label\s*=\s*([\".:_\-\/\w\s]+)}
           h.label = Regexp.last_match(3)
         end
       end
@@ -47,7 +47,7 @@ module FHIR
     # Parses a string named "header" and returns an Array of Tag objects.
     def self.parse_tags(header)
       tags = []
-      regex = /\s*,\s*/
+      regex = /,\s*/
       tokens = header.strip.split(regex)
       tokens.each { |token| tags << FHIR::Tag.parse_tag(token) }
       tags
