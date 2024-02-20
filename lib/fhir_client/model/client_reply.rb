@@ -110,7 +110,7 @@ module FHIR
         next unless rule['verb'] == @request[:method].to_s.upcase
         rule_match = false
         rule['path'].each do |path|
-          rule_regex = path.gsub('/', '(\/)').gsub('?', '\?')
+          rule_regex = path.gsub('\\', '\\\\').gsub('/', '(\/)').gsub('?', '\?')
           @@path_regexes.each do |token, regex|
             rule_regex.gsub!(token, regex)
           end

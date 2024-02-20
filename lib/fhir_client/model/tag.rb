@@ -34,10 +34,10 @@ module FHIR
       h.term = tokens.shift
       tokens.each do |token|
         if !token.strip.index('scheme').nil?
-          token.strip =~ %r{(?<=scheme)(\s*)=(\s*)([\".:_\-\/\w]+)}
+          token.strip =~ %r{scheme\s*=\s*([\".:_\-\/\w]+)}
           h.scheme = Regexp.last_match(3)
         elsif !token.strip.index('label').nil?
-          token.strip =~ %r{(?<=label)(\s*)=(\s*)([\".:_\-\/\w\s]+)}
+          token.strip =~ %r{label\s*=\s*([\".:_\-\/\w\s]+)}
           h.label = Regexp.last_match(3)
         end
       end
